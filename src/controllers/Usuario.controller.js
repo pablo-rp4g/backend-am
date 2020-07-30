@@ -27,6 +27,7 @@ UsuarioCtrl.crear = async (req, res) => {
 
 UsuarioCtrl.login = async (req, res) => {
     const { correo, contrasena } = req.body
+    console.log("estoy entrando usuariocontroller/login")
     const usuario = await Usuario.findOne({ correo: correo })
     if (!usuario) {
         return res.json({
