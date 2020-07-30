@@ -13,7 +13,8 @@ app.set('port', process.env.PORT || 4000);
 //el morgan  sirve para ver las peticiones que nos hace el cliente
 app.use(morgan('dev'));
 
-//el bodyparser y express.json nos sirve para recibir y traducir lo que nos envia el frontend, ya que desde el frontend se va a mandar los datos en formato json
+//el bodyparser y express.json nos sirve para recibir y traducir lo que nos envia el frontend, 
+//ya que desde el frontend se va a mandar los datos en formato json
 app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json())
 app.use(express.json());

@@ -9,7 +9,7 @@ router.get('/listarid/:id',Auth.verificartoken,ClienteCtrl.listarid)
 router.get('/listarClientesPorJefe/:id',Auth.verificartoken,ClienteCtrl.listarClientesPorJefe)
 router.delete('/eliminar/:id',Auth.verificartoken,ClienteCtrl.eliminar)
 router.put('/actualizar/:id',Auth.verificartoken,ClienteCtrl.actualizar)
-router.put('/actualizaValida/:id',Auth.verificartoken,ClienteCtrl.actualizarValida)//** */
+//router.put('/actualizaValida/:id',Auth.verificartoken,ClienteCtrl.actualizarValida)//** */
 router.get('/buscar/:nombres',Auth.verificartoken,ClienteCtrl.buscarcliente)
 
 module.exports=router

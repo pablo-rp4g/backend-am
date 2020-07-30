@@ -45,14 +45,14 @@ ClienteCtrl.actualizar=async(req,res)=>{
     })
 }
 
-ClienteCtrl.actualizarValida=async(req,res)=>{
-    const id=req.params.id
-    const datosnuevos={validado}=req.body
-    await Cliente.findByIdAndUpdate({_id:id},datosnuevos)
-    res.json({
-        mensaje:'Cliente Validado'
-    })
-}
+// ClienteCtrl.actualizarValida=async(req,res)=>{
+//     const id=req.params.id
+//     const datosnuevos={validado}=req.body
+//     await Cliente.findByIdAndUpdate({_id:id},datosnuevos)
+//     res.json({
+//         mensaje:'Cliente Validado'
+//     })
+// }
 
 ClienteCtrl.buscarcliente = async (req, res) => {
     const nombres = req.params.nombres
