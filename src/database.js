@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
 
-URI=('mongodb://localhost/BasePruebaForm')
+// URI=('mongodb://localhost/BasePruebaForm')
+URI=('mongodb://<dbuser>:<dbpassword>@ds161062.mlab.com:61062/heroku_69dlkdlv')
 
 mongoose.connect(URI,{
     useNewUrlParser: true,
