@@ -2,9 +2,10 @@ const ClienteCtrl={}
 const Cliente=require('../models/Cliente.model')
 
 ClienteCtrl.crear=async(req,res)=>{
-    const {nombres,apellidos,identificacion,puesto,tcontrato,usuario}=req.body
-    const cliente=new Cliente({nombres,apellidos,identificacion,puesto,tcontrato,usuario})
+    const {nombres,apellidos,identificacion,puesto,tcontrato,usuario, validado}=req.body
+    const cliente=new Cliente({nombres,apellidos,identificacion,puesto,tcontrato,usuario, validado})
     const respuesta=await cliente.save()
+    console.log(respuesta)
     res.json({
         mensaje:'Cliente creado',
         respuesta
@@ -27,6 +28,12 @@ ClienteCtrl.listarClientesPorJefe=async(req,res)=>{
     const respuesta=await Cliente.find({usuario:id})
     res.json(respuesta)
 }
+ClienteCtrl.listarClientesTODOS=async(req,res)=>{
+    //const id=req.params.id
+    const respuesta=await Cliente.find()
+    console.log(respuesta)
+    res.json(respuesta)
+}
 
 ClienteCtrl.eliminar=async(req,res)=>{
     const id=req.params.id
@@ -45,14 +52,15 @@ ClienteCtrl.actualizar=async(req,res)=>{
     })
 }
 
-// ClienteCtrl.actualizarValida=async(req,res)=>{
-//     const id=req.params.id
-//     const datosnuevos={validado}=req.body
-//     await Cliente.findByIdAndUpdate({_id:id},datosnuevos)
-//     res.json({
-//         mensaje:'Cliente Validado'
-//     })
-// }
+ClienteCtrl.valida=async(req,res)=>{
+    const id=req.params.id
+    const datosnuevos={validado}=req.body
+    console.log(datosnuevos)
+    await Cliente.findByIdAndUpdate({_id:id},datosnuevos)
+    res.json({
+        mensaje:'Cliente Validado'
+    })
+}
 
 ClienteCtrl.buscarcliente = async (req, res) => {
     const nombres = req.params.nombres

@@ -8,7 +8,7 @@ const ClienteSchema = new Schema({
     puesto: String,
     tcontrato: String,
     usuario: String,
-    validado: Number
+    validado: Boolean
 }, {
     timestamps: true
 }

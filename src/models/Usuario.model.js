@@ -4,7 +4,8 @@ const {Schema}=mongoose
 const UsuarioSchema=new Schema({
     nombre:String,
     correo:String,
-    contrasena:String
+    contrasena:String,
+    perfil: String
 },{
     timestamps:true
 }
