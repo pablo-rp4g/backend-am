@@ -30,3 +30,37 @@ app.use(cors({ origin: '*' }));
 app.listen(app.get('port'), () => {
     console.log('escuchando por el puerto', app.get('port'));
 })
+
+
+
+
+// const express = require('express');
+// const morgan = require('morgan');
+// const bodyparser=require('body-parser')
+// const conectarDB = require('./database');
+// const cors = require('cors');
+
+// // crear el servidor
+// const app = express();
+
+// // Conectar a la base de datos
+// conectarDB();
+
+// // habilitar cors
+// app.use(cors());
+
+// // Habilitar express.json
+// app.use( express.json({ extended: true }));
+
+// // puerto de la app
+// const port = process.env.PORT || 4000;
+
+// // Importar rutas
+//   app.use('/usuario', require('./routes/Usuario.route'));
+//   app.use('/cliente',require('./routes/Cliente.route'))
+
+
+// // arrancar la app
+// app.listen(port, '0.0.0.0', () => {
+//     console.log(`El servidor esta funcionando en el puerto ${port}`);
+// });
